@@ -12,11 +12,15 @@
         <field name="arch" type="xml">
             <form string="Down Payment">
                 <group>
+                    <field name="sale_order_id"/>
                     <field name="amount"/>
                     <field name="journal_id" domain="[('type', 'in', ['cash','bank'])]"/>
                     <field name="date"/>
                 </group>
-
+                    <footer>
+                        <button string="Create Payment" name="action_create_payment" type="object" class="oe_highlight" data-hotkey="q"/>
+                        <button string="Discard" class="btn btn-secondary" special="cancel" data-hotkey="x"/>
+                    </footer>
             </form>
         </field>
     </record>

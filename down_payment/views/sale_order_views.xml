@@ -6,7 +6,7 @@
         <field name="inherit_id" ref="sale.view_order_form"/>
         <field name="arch" type="xml">
             <xpath expr="//form[@class='o_sale_order']/header/button[last()]" position="after">
-                <button name="%(down_payment.sale_order_advance_payment_action)d"
+                <button name="%(down_payment.sale_order_advance_payment_action)d" context="{'default_sale_order_id': id}"
                     string="Down Payment" type="action"
                     invisible="state != 'sale'"/>
             </xpath>
